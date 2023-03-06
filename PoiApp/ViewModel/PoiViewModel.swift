@@ -66,6 +66,7 @@ class PoiViewModel: ObservableObject {
             } receiveValue: { response in
 //                self.poiList = response.list
                 self.savePoisToCoreData(context: context, poiList: response.list)
+                self.checkPoiList(context: context)
             }
         self.cancellables.insert(cancellable)
     }
@@ -79,34 +80,26 @@ class PoiViewModel: ObservableObject {
         
         poiList.forEach { (poi) in
             let entity = POI(context: context)
-
+            
             entity.id = Int16(poi.id)
             entity.latitude = poi.latitude
             entity.longitude = poi.longitude
             entity.image = poi.image
             entity.title = poi.title
-//            do{
-//                entity.imageData = try Data(contentsOf: URL(string: poi.image)!)
-                let url = URL(string: poi.image)
-                let urlRequest = URLRequest(url: url!)
-                let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-                    entity.imageData = data
-                }
-                task.resume()
-
-//            }catch{
-//                self.state = .failed(error: error)
-//            }
+            do{
+                entity.imageData = try Data(contentsOf: URL(string: poi.image)!)
+            }catch{
+                self.state = .failed(error: error)
+            }
             
         }
-
-        //save
+        
         do{
             try context.save()
-            
         }catch{
             self.state = .failed(error: error)
         }
+        
 
     }
     
