@@ -1,0 +1,469 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F95D5E6229B63785003C7FCD /* PoiAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D5E6129B63785003C7FCD /* PoiAppApp.swift */; };
+		F95D5E6429B63785003C7FCD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D5E6329B63785003C7FCD /* ContentView.swift */; };
+		F95D5E6629B63786003C7FCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F95D5E6529B63786003C7FCD /* Assets.xcassets */; };
+		F95D5E6929B63786003C7FCD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F95D5E6829B63786003C7FCD /* Preview Assets.xcassets */; };
+		F95D5E6B29B63786003C7FCD /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D5E6A29B63786003C7FCD /* Persistence.swift */; };
+		F95D5E6E29B63786003C7FCD /* PoiApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F95D5E6C29B63786003C7FCD /* PoiApp.xcdatamodeld */; };
+		F95D5E7829B638B5003C7FCD /* Poi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D5E7729B638B5003C7FCD /* Poi.swift */; };
+		F95D5E7B29B63942003C7FCD /* PoiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D5E7A29B63942003C7FCD /* PoiEndpoint.swift */; };
+		F95D5E7D29B639A3003C7FCD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D5E7C29B639A3003C7FCD /* Constants.swift */; };
+		F95D5E8029B63A73003C7FCD /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D5E7F29B63A73003C7FCD /* APIError.swift */; };
+		F95D5E8329B63AA5003C7FCD /* ResultState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D5E8229B63AA5003C7FCD /* ResultState.swift */; };
+		F95D5E8629B63ACA003C7FCD /* PoiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D5E8529B63ACA003C7FCD /* PoiService.swift */; };
+		F95D5E8A29B63B3F003C7FCD /* PoiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D5E8929B63B3F003C7FCD /* PoiViewModel.swift */; };
+		F95D5E8E29B63D3F003C7FCD /* PoiListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D5E8D29B63D3F003C7FCD /* PoiListView.swift */; };
+		F95D5E9029B63DB2003C7FCD /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D5E8F29B63DB2003C7FCD /* ErrorView.swift */; };
+		F95D5E9229B63E9E003C7FCD /* PoiCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D5E9129B63E9E003C7FCD /* PoiCellView.swift */; };
+		F95D5E9429B63F45003C7FCD /* PoiDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D5E9329B63F45003C7FCD /* PoiDetailView.swift */; };
+		F95D5E9829B64B71003C7FCD /* PlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D5E9729B64B71003C7FCD /* PlaceHolderView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F95D5E5E29B63785003C7FCD /* PoiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F95D5E6129B63785003C7FCD /* PoiAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiAppApp.swift; sourceTree = "<group>"; };
+		F95D5E6329B63785003C7FCD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F95D5E6529B63786003C7FCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F95D5E6829B63786003C7FCD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F95D5E6A29B63786003C7FCD /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		F95D5E6D29B63786003C7FCD /* PoiApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PoiApp.xcdatamodel; sourceTree = "<group>"; };
+		F95D5E7729B638B5003C7FCD /* Poi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poi.swift; sourceTree = "<group>"; };
+		F95D5E7A29B63942003C7FCD /* PoiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiEndpoint.swift; sourceTree = "<group>"; };
+		F95D5E7C29B639A3003C7FCD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F95D5E7F29B63A73003C7FCD /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		F95D5E8229B63AA5003C7FCD /* ResultState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultState.swift; sourceTree = "<group>"; };
+		F95D5E8529B63ACA003C7FCD /* PoiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiService.swift; sourceTree = "<group>"; };
+		F95D5E8929B63B3F003C7FCD /* PoiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiViewModel.swift; sourceTree = "<group>"; };
+		F95D5E8D29B63D3F003C7FCD /* PoiListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiListView.swift; sourceTree = "<group>"; };
+		F95D5E8F29B63DB2003C7FCD /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		F95D5E9129B63E9E003C7FCD /* PoiCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiCellView.swift; sourceTree = "<group>"; };
+		F95D5E9329B63F45003C7FCD /* PoiDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiDetailView.swift; sourceTree = "<group>"; };
+		F95D5E9729B64B71003C7FCD /* PlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F95D5E5B29B63785003C7FCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F95D5E5529B63785003C7FCD = {
+			isa = PBXGroup;
+			children = (
+				F95D5E6029B63785003C7FCD /* PoiApp */,
+				F95D5E5F29B63785003C7FCD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F95D5E5F29B63785003C7FCD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F95D5E5E29B63785003C7FCD /* PoiApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F95D5E6029B63785003C7FCD /* PoiApp */ = {
+			isa = PBXGroup;
+			children = (
+				F95D5E8429B63ABB003C7FCD /* Services */,
+				F95D5E8129B63A90003C7FCD /* ResultState */,
+				F95D5E7E29B63A5E003C7FCD /* Errors */,
+				F95D5E7929B63931003C7FCD /* Endpoint */,
+				F95D5E7629B637A6003C7FCD /* Model */,
+				F95D5E7529B6379E003C7FCD /* ViewModel */,
+				F95D5E7429B63794003C7FCD /* View */,
+				F95D5E6129B63785003C7FCD /* PoiAppApp.swift */,
+				F95D5E6329B63785003C7FCD /* ContentView.swift */,
+				F95D5E6529B63786003C7FCD /* Assets.xcassets */,
+				F95D5E6A29B63786003C7FCD /* Persistence.swift */,
+				F95D5E6C29B63786003C7FCD /* PoiApp.xcdatamodeld */,
+				F95D5E6729B63786003C7FCD /* Preview Content */,
+			);
+			path = PoiApp;
+			sourceTree = "<group>";
+		};
+		F95D5E6729B63786003C7FCD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F95D5E6829B63786003C7FCD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F95D5E7429B63794003C7FCD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F95D5E8D29B63D3F003C7FCD /* PoiListView.swift */,
+				F95D5E8F29B63DB2003C7FCD /* ErrorView.swift */,
+				F95D5E9129B63E9E003C7FCD /* PoiCellView.swift */,
+				F95D5E9329B63F45003C7FCD /* PoiDetailView.swift */,
+				F95D5E9729B64B71003C7FCD /* PlaceHolderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F95D5E7529B6379E003C7FCD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F95D5E8929B63B3F003C7FCD /* PoiViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F95D5E7629B637A6003C7FCD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F95D5E7729B638B5003C7FCD /* Poi.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F95D5E7929B63931003C7FCD /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				F95D5E7A29B63942003C7FCD /* PoiEndpoint.swift */,
+				F95D5E7C29B639A3003C7FCD /* Constants.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		F95D5E7E29B63A5E003C7FCD /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				F95D5E7F29B63A73003C7FCD /* APIError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		F95D5E8129B63A90003C7FCD /* ResultState */ = {
+			isa = PBXGroup;
+			children = (
+				F95D5E8229B63AA5003C7FCD /* ResultState.swift */,
+			);
+			path = ResultState;
+			sourceTree = "<group>";
+		};
+		F95D5E8429B63ABB003C7FCD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F95D5E8529B63ACA003C7FCD /* PoiService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F95D5E5D29B63785003C7FCD /* PoiApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F95D5E7129B63786003C7FCD /* Build configuration list for PBXNativeTarget "PoiApp" */;
+			buildPhases = (
+				F95D5E5A29B63785003C7FCD /* Sources */,
+				F95D5E5B29B63785003C7FCD /* Frameworks */,
+				F95D5E5C29B63785003C7FCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PoiApp;
+			productName = PoiApp;
+			productReference = F95D5E5E29B63785003C7FCD /* PoiApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F95D5E5629B63785003C7FCD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					F95D5E5D29B63785003C7FCD = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+				};
+			};
+			buildConfigurationList = F95D5E5929B63785003C7FCD /* Build configuration list for PBXProject "PoiApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F95D5E5529B63785003C7FCD;
+			productRefGroup = F95D5E5F29B63785003C7FCD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F95D5E5D29B63785003C7FCD /* PoiApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F95D5E5C29B63785003C7FCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F95D5E6929B63786003C7FCD /* Preview Assets.xcassets in Resources */,
+				F95D5E6629B63786003C7FCD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F95D5E5A29B63785003C7FCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F95D5E9229B63E9E003C7FCD /* PoiCellView.swift in Sources */,
+				F95D5E9829B64B71003C7FCD /* PlaceHolderView.swift in Sources */,
+				F95D5E7829B638B5003C7FCD /* Poi.swift in Sources */,
+				F95D5E7B29B63942003C7FCD /* PoiEndpoint.swift in Sources */,
+				F95D5E8629B63ACA003C7FCD /* PoiService.swift in Sources */,
+				F95D5E8329B63AA5003C7FCD /* ResultState.swift in Sources */,
+				F95D5E8A29B63B3F003C7FCD /* PoiViewModel.swift in Sources */,
+				F95D5E6E29B63786003C7FCD /* PoiApp.xcdatamodeld in Sources */,
+				F95D5E6B29B63786003C7FCD /* Persistence.swift in Sources */,
+				F95D5E8E29B63D3F003C7FCD /* PoiListView.swift in Sources */,
+				F95D5E7D29B639A3003C7FCD /* Constants.swift in Sources */,
+				F95D5E9429B63F45003C7FCD /* PoiDetailView.swift in Sources */,
+				F95D5E8029B63A73003C7FCD /* APIError.swift in Sources */,
+				F95D5E6429B63785003C7FCD /* ContentView.swift in Sources */,
+				F95D5E9029B63DB2003C7FCD /* ErrorView.swift in Sources */,
+				F95D5E6229B63785003C7FCD /* PoiAppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F95D5E6F29B63786003C7FCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F95D5E7029B63786003C7FCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F95D5E7229B63786003C7FCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PoiApp/Preview Content\"";
+				DEVELOPMENT_TEAM = N6M4552577;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = helked.PoiApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F95D5E7329B63786003C7FCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PoiApp/Preview Content\"";
+				DEVELOPMENT_TEAM = N6M4552577;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = helked.PoiApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F95D5E5929B63785003C7FCD /* Build configuration list for PBXProject "PoiApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F95D5E6F29B63786003C7FCD /* Debug */,
+				F95D5E7029B63786003C7FCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F95D5E7129B63786003C7FCD /* Build configuration list for PBXNativeTarget "PoiApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F95D5E7229B63786003C7FCD /* Debug */,
+				F95D5E7329B63786003C7FCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F95D5E6C29B63786003C7FCD /* PoiApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F95D5E6D29B63786003C7FCD /* PoiApp.xcdatamodel */,
+			);
+			currentVersion = F95D5E6D29B63786003C7FCD /* PoiApp.xcdatamodel */;
+			path = PoiApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F95D5E5629B63785003C7FCD /* Project object */;
+}
