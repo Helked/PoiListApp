@@ -12,10 +12,6 @@ struct PoiListView: View {
     @ObservedObject var poiVM = PoiViewModel(service: PoiService())
     @Environment(\.managedObjectContext) var context
     
-    //Fetch data from core data
-    @FetchRequest(entity: POI.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \POI.id, ascending: true)]) var results : FetchedResults<POI>
-    
-    
     
     var body: some View {
         NavigationView {
@@ -30,6 +26,7 @@ struct PoiListView: View {
                     case .failed(error: let error):
                         ErrorView(error: error)
                     case .success:
+                    
                     List( poiVM.filteredPois, id: \.self ){ poi in
                             NavigationLink(destination: PoiDetailView(poi: poi)){
                                 PoiCellView(poi: poi)
@@ -58,8 +55,6 @@ struct PoiListView: View {
         }
         .onAppear{
             poiVM.checkPoiList(context: context)
-            print("core data")
-            print(results.count)
         }
     }
 }

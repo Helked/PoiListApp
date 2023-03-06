@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F921DF2F29B66CF200136574 /* ResultState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F921DF2E29B66CF200136574 /* ResultState.swift */; };
 		F95D5E6229B63785003C7FCD /* PoiAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D5E6129B63785003C7FCD /* PoiAppApp.swift */; };
 		F95D5E6429B63785003C7FCD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D5E6329B63785003C7FCD /* ContentView.swift */; };
 		F95D5E6629B63786003C7FCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F95D5E6529B63786003C7FCD /* Assets.xcassets */; };
@@ -17,7 +18,6 @@
 		F95D5E7B29B63942003C7FCD /* PoiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D5E7A29B63942003C7FCD /* PoiEndpoint.swift */; };
 		F95D5E7D29B639A3003C7FCD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D5E7C29B639A3003C7FCD /* Constants.swift */; };
 		F95D5E8029B63A73003C7FCD /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D5E7F29B63A73003C7FCD /* APIError.swift */; };
-		F95D5E8329B63AA5003C7FCD /* ResultState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D5E8229B63AA5003C7FCD /* ResultState.swift */; };
 		F95D5E8629B63ACA003C7FCD /* PoiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D5E8529B63ACA003C7FCD /* PoiService.swift */; };
 		F95D5E8A29B63B3F003C7FCD /* PoiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D5E8929B63B3F003C7FCD /* PoiViewModel.swift */; };
 		F95D5E8E29B63D3F003C7FCD /* PoiListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D5E8D29B63D3F003C7FCD /* PoiListView.swift */; };
@@ -28,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F921DF2E29B66CF200136574 /* ResultState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultState.swift; sourceTree = "<group>"; };
 		F95D5E5E29B63785003C7FCD /* PoiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F95D5E6129B63785003C7FCD /* PoiAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiAppApp.swift; sourceTree = "<group>"; };
 		F95D5E6329B63785003C7FCD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,7 +40,6 @@
 		F95D5E7A29B63942003C7FCD /* PoiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiEndpoint.swift; sourceTree = "<group>"; };
 		F95D5E7C29B639A3003C7FCD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F95D5E7F29B63A73003C7FCD /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		F95D5E8229B63AA5003C7FCD /* ResultState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultState.swift; sourceTree = "<group>"; };
 		F95D5E8529B63ACA003C7FCD /* PoiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiService.swift; sourceTree = "<group>"; };
 		F95D5E8929B63B3F003C7FCD /* PoiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiViewModel.swift; sourceTree = "<group>"; };
 		F95D5E8D29B63D3F003C7FCD /* PoiListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoiListView.swift; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 		F95D5E8129B63A90003C7FCD /* ResultState */ = {
 			isa = PBXGroup;
 			children = (
-				F95D5E8229B63AA5003C7FCD /* ResultState.swift */,
+				F921DF2E29B66CF200136574 /* ResultState.swift */,
 			);
 			path = ResultState;
 			sourceTree = "<group>";
@@ -240,7 +240,6 @@
 				F95D5E7829B638B5003C7FCD /* Poi.swift in Sources */,
 				F95D5E7B29B63942003C7FCD /* PoiEndpoint.swift in Sources */,
 				F95D5E8629B63ACA003C7FCD /* PoiService.swift in Sources */,
-				F95D5E8329B63AA5003C7FCD /* ResultState.swift in Sources */,
 				F95D5E8A29B63B3F003C7FCD /* PoiViewModel.swift in Sources */,
 				F95D5E6E29B63786003C7FCD /* PoiApp.xcdatamodeld in Sources */,
 				F95D5E6B29B63786003C7FCD /* Persistence.swift in Sources */,
@@ -249,6 +248,7 @@
 				F95D5E9429B63F45003C7FCD /* PoiDetailView.swift in Sources */,
 				F95D5E8029B63A73003C7FCD /* APIError.swift in Sources */,
 				F95D5E6429B63785003C7FCD /* ContentView.swift in Sources */,
+				F921DF2F29B66CF200136574 /* ResultState.swift in Sources */,
 				F95D5E9029B63DB2003C7FCD /* ErrorView.swift in Sources */,
 				F95D5E6229B63785003C7FCD /* PoiAppApp.swift in Sources */,
 			);
