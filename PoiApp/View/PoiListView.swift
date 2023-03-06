@@ -10,6 +10,12 @@ import SwiftUI
 struct PoiListView: View {
     
     @ObservedObject var poiVM = PoiViewModel(service: PoiService())
+    @Environment(\.managedObjectContext) var context
+    
+    //Fetch data from core data
+    @FetchRequest(entity: POI.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \POI.id, ascending: true)]) var results : FetchedResults<POI>
+    
+    
     
     var body: some View {
         NavigationView {
@@ -22,9 +28,7 @@ struct PoiListView: View {
                                 .padding(10)
                         }
                     case .failed(error: let error):
-                        ErrorView(error: error,
-                                  errorButtonText: "Retry",
-                                  handler: poiVM.checkPoiList)
+                        ErrorView(error: error)
                     case .success:
                     List( poiVM.filteredPois, id: \.self ){ poi in
                             NavigationLink(destination: PoiDetailView(poi: poi)){
@@ -43,7 +47,7 @@ struct PoiListView: View {
                 ToolbarItem(placement: .navigationBarTrailing){
                     Button(action: {
                         //by cleaning array data, will autofetch
-                        poiVM.refreshData()
+                        poiVM.refreshData(context: context)
                     }, label: {
                         Image(systemName: "arrow.clockwise.circle")
                             .font(.title)
@@ -53,7 +57,9 @@ struct PoiListView: View {
             
         }
         .onAppear{
-            poiVM.checkPoiList()
+            poiVM.checkPoiList(context: context)
+            print("core data")
+            print(results.count)
         }
     }
 }

@@ -10,16 +10,10 @@ import SwiftUI
 struct ErrorView: View {
     
     
-    typealias ErrorViewActionHandler = () -> Void
-    
     let error: Error
-    let handler: ErrorViewActionHandler
-    let errorButtonText: String
     
-    internal init(error: Error, errorButtonText: String, handler: @escaping ErrorView.ErrorViewActionHandler) {
+    internal init(error: Error) {
         self.error = error
-        self.handler = handler
-        self.errorButtonText = errorButtonText
     }
     
     var body: some View {
@@ -36,23 +30,14 @@ struct ErrorView: View {
                 .multilineTextAlignment(.center)
                 .padding(.vertical, 4)
             
-            Button(action: {
-                handler()
-            }, label: {
-                Text(errorButtonText)
-                    .padding(.vertical, 12)
-                    .padding(.horizontal, 30)
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-            })
+            
         }
     }
 }
 
 struct ErrorView_Previews: PreviewProvider {
     static var previews: some View {
-        ErrorView(error: APIError.unknown, errorButtonText: "Retry"){}
+        ErrorView(error: APIError.unknown)
             .previewLayout(.sizeThatFits)
     }
 }

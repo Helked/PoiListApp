@@ -9,6 +9,7 @@ import Foundation
 import Combine
 import CoreData
 
+
 class PoiViewModel: ObservableObject {
     
     private let service: PoiService
@@ -17,6 +18,8 @@ class PoiViewModel: ObservableObject {
     
     @Published private(set) var state: ResultState = .loading
     @Published var searchText = ""
+    
+    
     
     
     init (service: PoiService){
@@ -30,18 +33,21 @@ class PoiViewModel: ObservableObject {
         }
     }
     
-    func checkPoiList(){
+    func checkPoiList(context: NSManagedObjectContext){
         if self.poiList.isEmpty {
-            getPoiList()
+            getPoiList(context: context)
         }
     }
     
-    func refreshData() {
+    func refreshData(context: NSManagedObjectContext) {
         self.poiList.removeAll()
-        getPoiList()
+        getPoiList(context: context)
     }
     
-    private func getPoiList() {
+   
+    
+    
+    private func getPoiList(context: NSManagedObjectContext) {
         self.state = .loading
         
         let cancellable = service
@@ -55,30 +61,31 @@ class PoiViewModel: ObservableObject {
                 }
             } receiveValue: { response in
                 self.poiList = response.list
+                self.savePoisToCoreData(context: context)
             }
         self.cancellables.insert(cancellable)
     }
     
-//    private func savePoisToCoreData(context: NSManagedObjectContext){
-//        poiList.forEach { (poi) in
-//            let entity = Poi(context: context)
-//            
-//            entity.id = Int16(poi.id)
-//            entity.latitude = poi.latitude
-//            entity.longitude = poi.longitude
-//            entity.image = poi.image
-//            entity.title = poi.title
-//            
-//        }
-//        
-//        //save
-//        do{
-//            try context.save()
-//            print("success")
-//        }catch{
-//            print(error.localizedDescription)
-//        }
-//        
-//    }
+    private func savePoisToCoreData(context: NSManagedObjectContext){
+        poiList.forEach { (poi) in
+            let entity = POI(context: context)
+
+            entity.id = Int16(poi.id)
+            entity.latitude = poi.latitude
+            entity.longitude = poi.longitude
+            entity.image = poi.image
+            entity.title = poi.title
+
+        }
+
+        //save
+        do{
+            try context.save()
+            print("success")
+        }catch{
+            self.state = .failed(error: error)
+        }
+
+    }
     
 }
