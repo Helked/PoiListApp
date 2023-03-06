@@ -27,11 +27,16 @@ struct PoiListView: View {
                         ErrorView(error: error)
                     case .success:
                     
-                    List( poiVM.filteredPois, id: \.self ){ poi in
+//                    List (poiVM.filteredPois, id:\.id) { poi in
+//
+//                    }
+                    
+                    
+                    List( poiVM.filteredPois, id: \.id ){ poi in
                             NavigationLink(destination: PoiDetailView(poi: poi)){
                                 PoiCellView(poi: poi)
                                         }
-                            
+
                         }
                         .listStyle(InsetListStyle())
                         .searchable(text: $poiVM.searchText)
@@ -43,7 +48,6 @@ struct PoiListView: View {
             .toolbar{
                 ToolbarItem(placement: .navigationBarTrailing){
                     Button(action: {
-                        //by cleaning array data, will autofetch
                         poiVM.refreshData(context: context)
                     }, label: {
                         Image(systemName: "arrow.clockwise.circle")

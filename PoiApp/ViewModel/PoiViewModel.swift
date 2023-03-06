@@ -13,7 +13,7 @@ import CoreData
 class PoiViewModel: ObservableObject {
     
     private let service: PoiService
-    private(set) var poiList = [Poi]()
+    private(set) var poiList = [POI]()
     private var cancellables = Set<AnyCancellable>()
     
     @Published private(set) var state: ResultState = .loading
@@ -25,11 +25,20 @@ class PoiViewModel: ObservableObject {
     }
     
     
-    var filteredPois: [Poi] {
+    var filteredPois: [POI] {
         return searchText == "" ? self.poiList : self.poiList.filter {
-            $0.title.lowercased().contains(searchText.lowercased())
+            $0.title!.lowercased().contains(searchText.lowercased())
         }
     }
+    
+    
+    func refreshData(context: NSManagedObjectContext) {
+        self.state = .loading
+        self.deleteCoreData(context: context)
+        self.poiList.removeAll()
+        checkPoiList(context: context)
+    }
+    
     
     func checkPoiList(context: NSManagedObjectContext){
         fetchCoreData(context: context)
@@ -40,19 +49,6 @@ class PoiViewModel: ObservableObject {
         }
     }
     
-    
-    func refreshData(context: NSManagedObjectContext) {
-        print("total antes: \(poiList.count)")
-        
-        self.deleteCoreData(context: context)
-        self.poiList.removeAll()
-        
-        print("total después: \(poiList.count)")
-        
-        checkPoiList(context: context)
-    }
-    
-   
     
     
     private func getPoiList(context: NSManagedObjectContext) {
@@ -68,7 +64,7 @@ class PoiViewModel: ObservableObject {
                     self.state = .failed(error: error)
                 }
             } receiveValue: { response in
-                self.poiList = response.list
+//                self.poiList = response.list
                 self.savePoisToCoreData(context: context, poiList: response.list)
             }
         self.cancellables.insert(cancellable)
@@ -79,7 +75,8 @@ class PoiViewModel: ObservableObject {
     
     //MARK: -core data methods
     
-    private func savePoisToCoreData(context: NSManagedObjectContext, poiList: [Poi]){
+    private func savePoisToCoreData (context: NSManagedObjectContext, poiList: [Poi]) {
+        
         poiList.forEach { (poi) in
             let entity = POI(context: context)
 
@@ -88,7 +85,19 @@ class PoiViewModel: ObservableObject {
             entity.longitude = poi.longitude
             entity.image = poi.image
             entity.title = poi.title
+//            do{
+//                entity.imageData = try Data(contentsOf: URL(string: poi.image)!)
+                let url = URL(string: poi.image)
+                let urlRequest = URLRequest(url: url!)
+                let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+                    entity.imageData = data
+                }
+                task.resume()
 
+//            }catch{
+//                self.state = .failed(error: error)
+//            }
+            
         }
 
         //save
@@ -109,10 +118,11 @@ class PoiViewModel: ObservableObject {
         
         do{
             let results = try context.fetch(poiFetch)
-            for result in results {
-                let newPoi = Poi(id: Int(result.id), title: result.title!, latitude: result.latitude, longitude: result.longitude, image: result.image!)
-                self.poiList.append(newPoi)
-            }
+//            for result in results {
+//                let newPoi = Poi(id: Int(result.id), title: result.title!, latitude: result.latitude, longitude: result.longitude, image: result.image!)
+//                self.poiList.append(newPoi)
+//            }
+            self.poiList = results
         } catch {
             self.state = .failed(error: error)
         }

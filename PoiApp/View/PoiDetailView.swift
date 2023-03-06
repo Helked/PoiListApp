@@ -15,11 +15,11 @@ struct MyAnnotationItem: Identifiable {
 
 
 struct PoiDetailView: View {
-    let poi: Poi
+    let poi: POI
     @State private var region: MKCoordinateRegion
     private var anotationItems: [MyAnnotationItem]
     
-    init(poi: Poi) {
+    init(poi: POI) {
         self.poi = poi
         _region = State(initialValue: MKCoordinateRegion(
                             center: CLLocationCoordinate2D(latitude: poi.latitude, longitude: poi.longitude),
@@ -31,7 +31,7 @@ struct PoiDetailView: View {
     var body: some View {
         
         VStack{
-            Text(poi.title)
+            Text(poi.title!)
            
             Map(coordinateRegion: $region,
                             annotationItems: anotationItems) {item in
