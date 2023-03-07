@@ -27,6 +27,10 @@ struct Poi: Decodable, Hashable {
         case geocoordinates
     }
     
+    
+    /* esta inicialización es para amoldar la respuesta de la API a mi modelo de datos, ya que el ID se obtiene como un String y lo quiero
+    guardar como un Int, y para separar el String de geocoordinates en los valores de la latitud y la longitud
+     */
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         title = try container.decode(String.self, forKey: CodingKeys.title)
@@ -54,23 +58,7 @@ struct Poi: Decodable, Hashable {
         }
         longitude = longDouble
     }
-    
-    init(id: Int, title: String, latitude: Double, longitude: Double, image: String){
-        self.id = id
-        self.title = title
-        self.latitude = latitude
-        self.longitude = longitude
-        self.image = image
-    }
+ 
 }
 
 
-extension Poi {
-    static var dummyData: Poi {
-        .init(id: 1,
-              title: "Camp Nou",
-              latitude: 41.3809,
-              longitude: 2.1206311,
-              image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Camp_Nou_aerial_%28cropped%29.jpg/150px-Camp_Nou_aerial_%28cropped%29.jpg")
-    }
-}

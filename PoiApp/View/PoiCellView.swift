@@ -14,23 +14,7 @@ struct PoiCellView: View {
     private let height : CGFloat = 100
     var body: some View {
         HStack (spacing: 10, content: {
-
-//            AsyncImage(
-//                url: URL(string: poi.image!),
-//                        content: { image in
-//                            image.resizable()
-//                                .scaledToFill()
-//                                .frame(width: self.width, height: self.height, alignment: .center)
-//                                .clipped()
-//                                .cornerRadius(15)
-//
-//                        },
-//                        placeholder: {
-//                            ProgressView()
-//                                .frame(width: self.width, height: self.height)
-//                                .clipped()
-//                        }
-//            )
+            
             if(poi.imageData != nil){
                 Image(uiImage: UIImage(data: poi.imageData!)!)
                     .resizable()
@@ -38,9 +22,16 @@ struct PoiCellView: View {
                     .frame(width: self.width, height: self.height, alignment: .center)
                     .clipped()
                     .cornerRadius(15)
+            }else{
+                Image(systemName: "mappin.and.ellipse")
+                    .resizable()
+                    .frame(width: self.width, height: self.height, alignment: .center)
+                    .clipped()
+                    .cornerRadius(15)
+                    .foregroundColor(.gray)
             }
             
-            Text(poi.title!)
+            Text(poi.title ?? "No title")
                 .font(.title3)
                 .fontWeight(.medium)
                 .foregroundColor(.black)

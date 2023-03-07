@@ -13,18 +13,20 @@ import CoreData
 class PoiViewModel: ObservableObject {
     
     private let service: PoiService
+    
+    //poiList va a ser un array de mi entidad de Core Data
     private(set) var poiList = [POI]()
     private var cancellables = Set<AnyCancellable>()
     
     @Published private(set) var state: ResultState = .loading
-    @Published var searchText = ""
     
+    @Published var searchText = ""
     
     init (service: PoiService){
         self.service = service
     }
     
-    
+    //esta variable me devolverá los POIs filtrados con la búsqueda que se haga en la vista
     var filteredPois: [POI] {
         return searchText == "" ? self.poiList : self.poiList.filter {
             $0.title!.lowercased().contains(searchText.lowercased())
@@ -32,6 +34,7 @@ class PoiViewModel: ObservableObject {
     }
     
     
+    //este método borra los datos y los vuelve a pedir
     func refreshData(context: NSManagedObjectContext) {
         self.state = .loading
         self.deleteCoreData(context: context)
@@ -40,8 +43,10 @@ class PoiViewModel: ObservableObject {
     }
     
     
+    //método para comprobar si hay valores almacenados
     func checkPoiList(context: NSManagedObjectContext){
         fetchCoreData(context: context)
+        
         if self.poiList.isEmpty{
             getPoiList(context: context)
         }else{
@@ -50,7 +55,7 @@ class PoiViewModel: ObservableObject {
     }
     
     
-    
+    //este método conecta con el servicio y recibe los datos obtenidos de la Api
     private func getPoiList(context: NSManagedObjectContext) {
         self.state = .loading
         
@@ -64,7 +69,6 @@ class PoiViewModel: ObservableObject {
                     self.state = .failed(error: error)
                 }
             } receiveValue: { response in
-//                self.poiList = response.list
                 self.savePoisToCoreData(context: context, poiList: response.list)
                 self.checkPoiList(context: context)
             }
@@ -76,6 +80,7 @@ class PoiViewModel: ObservableObject {
     
     //MARK: -core data methods
     
+    //método para almacenar los datos en core data
     private func savePoisToCoreData (context: NSManagedObjectContext, poiList: [Poi]) {
         
         poiList.forEach { (poi) in
@@ -103,6 +108,8 @@ class PoiViewModel: ObservableObject {
 
     }
     
+    
+    //método que obtiene los datos guardados en core data y los guarda en la variable poiList (la lista de los poi)
     private func fetchCoreData(context: NSManagedObjectContext) {
         
         let poiFetch: NSFetchRequest<POI> = POI.fetchRequest()
@@ -111,10 +118,6 @@ class PoiViewModel: ObservableObject {
         
         do{
             let results = try context.fetch(poiFetch)
-//            for result in results {
-//                let newPoi = Poi(id: Int(result.id), title: result.title!, latitude: result.latitude, longitude: result.longitude, image: result.image!)
-//                self.poiList.append(newPoi)
-//            }
             self.poiList = results
         } catch {
             self.state = .failed(error: error)
@@ -122,6 +125,8 @@ class PoiViewModel: ObservableObject {
         
     }
     
+    
+    //método para eliminar todos los datos de core data de la entidad POI
     private func deleteCoreData(context: NSManagedObjectContext){
         let poiFetch: NSFetchRequest<POI> = POI.fetchRequest()
         poiFetch.returnsObjectsAsFaults = false

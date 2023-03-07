@@ -10,6 +10,11 @@ import Combine
 
 struct PoiService {
     
+    /*
+     He creado un servicio que hace uso del tipo de datos genérico de Swift para poder obtener la respuesta de una API
+     y que no esté encorsetado en un tipo de dato concreto
+     */
+    
     func request<T>(from endpoint: PoiApi, decodingType: T.Type) -> AnyPublisher<T, APIError> where T: Decodable {
         
         return URLSession
